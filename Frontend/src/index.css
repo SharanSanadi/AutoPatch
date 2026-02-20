@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #2ecc71, #3498db);
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+.progress {
+  height: 14px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2ecc71, #00ffcc);
+}
