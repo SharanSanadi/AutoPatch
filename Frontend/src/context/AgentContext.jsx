@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+import { API_ENDPOINTS } from "../config/api"
 
 export const AgentContext = createContext()
 
@@ -14,21 +15,18 @@ export function AgentProvider({ children }) {
       setRunning(true)
       setReport(null)
 
-      const response = await fetch(
-        "https://autopatch-4.onrender.com/api/analyze",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            repo_url: repoUrl,
-            team_name: team || "HackathonTeam",
-            leader_name: leader || "Leader",
-            github_token: " ",
-          }),
-        }
-      )
+      const response = await fetch(API_ENDPOINTS.analyze, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          repo_url: repoUrl,
+          team_name: team || "HackathonTeam",
+          leader_name: leader || "Leader",
+          github_token: " ",
+        }),
+      })
 
       // 🔥 IMPORTANT DEBUG
       console.log("STATUS:", response.status)
